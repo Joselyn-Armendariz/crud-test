@@ -3,6 +3,10 @@
 use App\Models\Nota;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect('/notas'); // Redirige a /notas
+});
+
 Route::get('/notas', function () {
     $notas = Nota::all(); // Obtener todas las notas
     return view('notas.index', compact('notas')); // Pasar las notas a la vista
